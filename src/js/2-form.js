@@ -33,10 +33,11 @@ inputForm.addEventListener('input', fillLocalStorage);
 inputForm.addEventListener('submit', () => {
   if (!inputForm.elements.email.value || !inputForm.elements.message.value) {
     alert('Fill please all fields');
+  } else {
+    console.log(formData);
+    localStorage.removeItem(localStorageKey);
+    formData.email = '';
+    formData.message = '';
+    inputForm.reset();
   }
-  console.log(formData);
-  localStorage.removeItem(localStorageKey);
-  formData.email = '';
-  formData.message = '';
-  inputForm.reset();
 });
