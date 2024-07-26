@@ -30,7 +30,8 @@ const fillLocalStorage = evt => {
 
 inputForm.addEventListener('input', fillLocalStorage);
 
-inputForm.addEventListener('submit', () => {
+inputForm.addEventListener('submit', evt => {
+  evt.preventDefault();
   if (!inputForm.elements.email.value || !inputForm.elements.message.value) {
     alert('Fill please all fields');
   } else {
